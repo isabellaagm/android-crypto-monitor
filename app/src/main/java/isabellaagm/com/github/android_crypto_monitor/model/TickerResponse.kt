@@ -1,6 +1,6 @@
 package isabellaagm.com.github.android_crypto_monitor.model
 
-class TicketResponse {
+class TickerResponse {
     val ticker: Ticker = TODO()
 }
 
