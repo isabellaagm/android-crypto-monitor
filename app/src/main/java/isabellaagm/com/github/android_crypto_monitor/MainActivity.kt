@@ -1,6 +1,7 @@
-package isabellaagm.com.github.android_crypto_monitor
+ package isabellaagm.com.github.android_crypto_monitor
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -18,7 +19,7 @@ import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         // Configurando a toolbar
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         // Configurando o botão Refresh
         val btnRefresh: Button = findViewById(R.id.btn_refresh)
         btnRefresh.setOnClickListener {
+            Log.d("MainActivity", "Botão de atualizar clicado")
             makeRestCall()
         }
     }
@@ -40,7 +42,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun makeRestCall() {
-
         CoroutineScope(Dispatchers.Main).launch {
             try {
                 val service = MercadoBitcoinServiceFactory().create()

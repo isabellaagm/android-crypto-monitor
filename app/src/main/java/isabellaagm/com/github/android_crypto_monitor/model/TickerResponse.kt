@@ -1,8 +1,6 @@
 package isabellaagm.com.github.android_crypto_monitor.model
 
-class TickerResponse {
-    val ticker: Ticker = TODO()
-}
+class TickerResponse(val ticker: Ticker)
 
 class Ticker(
     val high: String,
